@@ -1,4 +1,4 @@
-package com.company;
+package com.redhat.zgrinber;
 
 import java.util.HashMap;
 import java.util.Map;

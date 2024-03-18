@@ -1,4 +1,4 @@
-package com.company;
+package com.redhat.zgrinber;
 
 import org.junit.Before;
 import org.junit.Test;
