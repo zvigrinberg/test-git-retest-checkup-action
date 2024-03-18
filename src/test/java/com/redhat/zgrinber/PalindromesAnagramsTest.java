@@ -26,4 +26,10 @@ public class PalindromesAnagramsTest {
 
 
     }
+
+    @Test
+    void testIfIsPalindromeAndPalindromeAnagram() {
+        assertTrue(palindromesAnagrams.isPalindromeAndPalindromeAnagram("abba"));
+        assertFalse(palindromesAnagrams.isPalindromeAndPalindromeAnagram("aabb"));
+    }
 }
