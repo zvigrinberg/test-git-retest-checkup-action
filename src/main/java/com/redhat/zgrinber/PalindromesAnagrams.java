@@ -59,16 +59,11 @@ public class PalindromesAnagrams {
 
     public boolean isPalindrome(String str)
     {
-        return false;
-    }
-        public boolean isPalindromeAndPalindromeAnagram(String str)
-    {
         char[] chars = str.toCharArray();
         for (int i = 0, j= chars.length - 1; i < chars.length && j >= 0 ; i++, j--) {
             if(chars[i] != chars[j])
                  return false;
         }
-        return isPalindromeAnagram(str) && true;
+        return true;
     }
-
 }
