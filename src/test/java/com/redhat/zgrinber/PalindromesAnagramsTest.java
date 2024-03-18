@@ -1,20 +1,22 @@
 package com.redhat.zgrinber;
 
-import org.junit.Before;
-import org.junit.Test;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PalindromesAnagramsTest {
 
     private PalindromesAnagrams palindromesAnagrams;
-    @Before
+    @BeforeEach
     public void setupTests()
     {
         palindromesAnagrams = new PalindromesAnagrams();
     }
     @Test
-    public void isPalindromeAnagram() {
+    public void TestisPalindromeAnagram() {
         assertTrue(palindromesAnagrams.isPalindromeAnagram("aabb"));
         assertTrue(palindromesAnagrams.isPalindromeAnagram("aabbb"));
         assertFalse(palindromesAnagrams.isPalindromeAnagram("aabbbccc"));

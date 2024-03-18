@@ -57,7 +57,7 @@ public class PalindromesAnagrams {
         return result;
     }
 
-    private boolean isPalindrome(String str)
+    public boolean isPalindrome(String str)
     {
         char[] chars = str.toCharArray();
         for (int i = 0, j= chars.length - 1; i < chars.length && j >= 0 ; i++, j--) {
