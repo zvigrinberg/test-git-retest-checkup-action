@@ -32,7 +32,8 @@ jobs:
           base-ref: ${{ github.base_ref }}
           pr-ref: ${{ github.head_ref }}
 
-      - name: Test Java
+
+      - name: Install Java
         env:
           RETEST_IS_NECESSARY: ${{ steps.test-check.outputs.retest-is-needed}}
         run: |
