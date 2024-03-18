@@ -1,4 +1,4 @@
-name: CI workflow
+name: CI Staging workflow
 
 on:
   pull_request_target:
@@ -27,12 +27,13 @@ jobs:
           cache: maven     
       - name: Check if re-test is needed
         id: test-check
-        uses: zvigrinberg/git-retest-checkup-action@3f9faed75d0e7fd69788b6e82c130e390cc35f33  
+        uses: zvigrinberg/git-retest-checkup-action@v1
         with:
           base-ref: ${{ github.base_ref }}
           pr-ref: ${{ github.head_ref }}
 
-      - name: Test Java
+
+      - name: Install Java
         env:
           RETEST_IS_NECESSARY: ${{ steps.test-check.outputs.retest-is-needed}}
         run: |
