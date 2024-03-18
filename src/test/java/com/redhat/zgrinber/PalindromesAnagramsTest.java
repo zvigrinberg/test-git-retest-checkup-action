@@ -15,6 +15,13 @@ public class PalindromesAnagramsTest {
     {
         palindromesAnagrams = new PalindromesAnagrams();
     }
+
+    @Test
+    void test_is_PalindromeAndAnagram() {
+        assertTrue(palindromesAnagrams.isPalindromeAndPalindromeAnagram("abba"));
+        assertFalse(palindromesAnagrams.isPalindromeAndPalindromeAnagram("aabb"));
+    }
+
     @Test
     public void TestisPalindromeAnagram() {
         assertTrue(palindromesAnagrams.isPalindromeAnagram("aabb"));
@@ -27,9 +34,4 @@ public class PalindromesAnagramsTest {
 
     }
 
-    @Test
-    void test_is_Palindrome() {
-        assertTrue(palindromesAnagrams.isPalindrome("abba"));
-        assertFalse(palindromesAnagrams.isPalindrome("abbaa"));
-    }
 }
