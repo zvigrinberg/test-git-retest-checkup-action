@@ -37,7 +37,7 @@ jobs:
         env:
           RETEST_IS_NECESSARY: ${{ steps.test-check.outputs.retest-is-needed}}
         run: |
-          if [[ $RETEST_IS_NECESSARY == "true ]]; then
+          if [[ $RETEST_IS_NECESSARY == "true" ]]; then
              mvn clean install
           else
              mvn clean install -DskipTests=true
