@@ -31,6 +31,7 @@ public class PalindromesAnagramsTest {
         assertTrue(palindromesAnagrams.isPalindromeAnagram("aabbbcc"));
         assertFalse(palindromesAnagrams.isPalindromeAnagram("aaabbb"));
         assertFalse(palindromesAnagrams.isPalindromeAnagram("199244593"));
+        assertTrue(palindromesAnagrams.isPalindromeAnagram("123454321"));
 
 
     }
