@@ -1,0 +1,37 @@
+name: CI workflow
+
+on:
+  pull_request_target:
+    types:
+      - closed
+    branches: [ "main" ]
+
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout git Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: maven     
+      - name: Check if re-test is needed  
+        uses: git-retest-checkup-action@3f9faed75d0e7fd69788b6e82c130e390cc35f33  
+        with:
+          base-ref: ${{ github.base_ref }}
+          pr-ref: ${{ github.head_ref }}
+
+      - name: Test Java
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
