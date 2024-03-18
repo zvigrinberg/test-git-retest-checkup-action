@@ -25,13 +25,19 @@ jobs:
           distribution: temurin
           java-version: 17
           cache: maven     
-      - name: Check if re-test is needed  
+      - name: Check if re-test is needed
+        id: test-check
         uses: zvigrinberg/git-retest-checkup-action@3f9faed75d0e7fd69788b6e82c130e390cc35f33  
         with:
           base-ref: ${{ github.base_ref }}
           pr-ref: ${{ github.head_ref }}
 
       - name: Test Java
+        env:
+          RETEST_IS_NECESSARY: ${{ steps.test-check.outputs.retest-is-needed}}
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          if [[ $RETEST_IS_NECESSARY == "true ]]; then
+             mvn clean install
+          else
+             mvn clean install -DskipTests=true
+          fi
