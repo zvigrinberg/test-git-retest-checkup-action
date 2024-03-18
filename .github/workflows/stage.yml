@@ -26,7 +26,7 @@ jobs:
           java-version: 17
           cache: maven     
       - name: Check if re-test is needed  
-        uses: git-retest-checkup-action@3f9faed75d0e7fd69788b6e82c130e390cc35f33  
+        uses: zvigrinberg/git-retest-checkup-action@3f9faed75d0e7fd69788b6e82c130e390cc35f33  
         with:
           base-ref: ${{ github.base_ref }}
           pr-ref: ${{ github.head_ref }}
