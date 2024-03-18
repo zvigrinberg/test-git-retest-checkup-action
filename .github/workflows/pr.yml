@@ -2,8 +2,7 @@ name: Pull Request Review
 
 on:
   pull_request_target:
-    types:
-      - opened
+
     branches: [ "main" ]
 
   workflow_dispatch:
