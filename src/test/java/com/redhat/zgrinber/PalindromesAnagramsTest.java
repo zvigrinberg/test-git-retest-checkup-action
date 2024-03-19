@@ -20,6 +20,7 @@ public class PalindromesAnagramsTest {
     void test_is_PalindromeAndAnagram() {
         assertTrue(palindromesAnagrams.isPalindromeAndPalindromeAnagram("abba"));
         assertFalse(palindromesAnagrams.isPalindromeAndPalindromeAnagram("aabb"));
+        assertTrue(palindromesAnagrams.isPalindromeAndPalindromeAnagram("abcdefghijihgfedcba"));
         assertFalse(palindromesAnagrams.isPalindromeAndPalindromeAnagram("aabbc"));
     }
 
