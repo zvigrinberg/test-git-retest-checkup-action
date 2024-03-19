@@ -33,6 +33,8 @@ public class PalindromesAnagramsTest {
         assertFalse(palindromesAnagrams.isPalindromeAnagram("199244593"));
         assertTrue(palindromesAnagrams.isPalindromeAnagram("123454321"));
         assertFalse(palindromesAnagrams.isPalindromeAnagram("fdsf4kjgjss"));
+        assertFalse(palindromesAnagrams.isPalindromeAnagram("32098u32fhbf6621999"));
+
 
 
     }
