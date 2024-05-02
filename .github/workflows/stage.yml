@@ -34,17 +34,21 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
       - name: Check if re-test is needed
         id: test-check
-        uses: zvigrinberg/git-retest-checkup-action@v1
+        uses: zvigrinberg/git-retest-checkup-action@v1.1
         with:
           base-ref: ${{ github.base_ref }}
           pr-ref: ${{ github.head_ref }}
+          file-pattern-regex: "^src/.*"
+
 
 
       - name: Install Java
         env:
           RETEST_IS_NECESSARY: ${{ steps.test-check.outputs.retest-is-needed}}
+          TRIGGERING_FILE: ${{ steps.test-check.outputs.triggering-file}}
         run: |
           if [[ $RETEST_IS_NECESSARY == "true" ]]; then
+             echo "re-test was triggered, triggering changed file - $TRIGGERING_FILE"
              mvn clean install
           else
              mvn clean install -DskipTests=true
